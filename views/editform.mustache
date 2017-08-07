@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join CarDudes!</title>
+	<link rel = "stylesheet" href = "main.css">
+</head>
+<body>
+	<div class = "container">
+	<h1>Edit your info for CarDudes!</h1>
+	<form action = "/edit/:username" method = "post" name = "signupForm" class = "memberEntry">
+		<label>Name:</label>
+		<input type = "text" name = "name"/>
+		<label>Username: (required</label>
+		<input type = "text" name = "username"/>
+		<label>Age:</label>
+		<input type = "text" name = "age"/>
+		<label>Location:</label>
+		<input type = "text" name = "location"/>
+		<label>Website:</label>
+		<input type = "text" name = "website"/>
+		<h3>Project Car Info</h3>
+		<label>Picture URL:</label>
+		<input type = "text" name = "carpic"/>
+		<label>Year:</label>
+		<input type = "text" name = "year"/>
+		<label>Make:</label>
+		<input type = "text" name = "make"/>
+		<label>Model:</label>
+		<input type = "text" name = "model"/>
+		<label>Transmission:</label>
+		<input type = "text" name = "trans"/>
+		<label>Engine:</label>
+		<input type = "text" name = "engine"/>
+		<button type = "submit">Submit</button>
+	</form>
+	</div>
+</body>
+</html>
