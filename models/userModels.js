@@ -72,9 +72,19 @@ function delEntries(cb){
 }
 
 
+function viewUsername(cb){
+	var query = {username: username}
+	CarModel.findOne(query)
+	.then(function(data){
+		cb(data)
+	})
+		
+	}
+
 module.exports = {
 	CarModel: CarModel,
-	addEntry: addEntry
+	addEntry: addEntry,
+	viewUsername: viewUsername
 }
 
 

@@ -7,30 +7,30 @@
 <body>
 	<div class = "container">
 	<h1>Edit your info for CarDudes!</h1>
-	<form action = "/edit/:username" method = "post" name = "signupForm" class = "memberEntry">
+	<form action = "/submit/{{username}}" method = "post" name = "signupForm" class = "memberEntry">
 		<label>Name:</label>
-		<input type = "text" name = "name"/>
-		<label>Username: (required</label>
-		<input type = "text" name = "username"/>
+		<input type = "text" name = "name" value = "{{name}}"/>
+		<label>Username: (required)</label>
+		<input type = "text" name = "username" value = "{{username}}"/>
 		<label>Age:</label>
-		<input type = "text" name = "age"/>
+		<input type = "text" name = "age" value = "{{age}}"/>
 		<label>Location:</label>
-		<input type = "text" name = "location"/>
+		<input type = "text" name = "location" value = "{{location}}"/>
 		<label>Website:</label>
-		<input type = "text" name = "website"/>
+		<input type = "text" name = "website" value = "{{website}}"/>
 		<h3>Project Car Info</h3>
 		<label>Picture URL:</label>
-		<input type = "text" name = "carpic"/>
+		<input type = "text" name = "carpic" value = "{{carpic}}"/>
 		<label>Year:</label>
-		<input type = "text" name = "year"/>
+		<input type = "text" name = "year" value = "{{year}}"/>
 		<label>Make:</label>
-		<input type = "text" name = "make"/>
+		<input type = "text" name = "make" value = "{{make}}"/>
 		<label>Model:</label>
-		<input type = "text" name = "model"/>
+		<input type = "text" name = "model" value = "{{model}}"/>
 		<label>Transmission:</label>
-		<input type = "text" name = "trans"/>
+		<input type = "text" name = "trans" value = "{{trans}}"/>
 		<label>Engine:</label>
-		<input type = "text" name = "engine"/>
+		<input type = "text" name = "engine" value = "{{engine}}"/>
 		<button type = "submit">Submit</button>
 	</form>
 	</div>

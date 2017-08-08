@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{name}}'s Profile</title>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+    <a href = "/">
+    <button type = "submit" class = "buttonLink">Return to CarDude's Directory</button>
+    </a>
+    <div class = "container">
+      {{#cars}}
+      <div class = "userProfile">
+      <img class = "profilePic" src = "{{carpic}}"/>  
+        <div class = "userProfileInfo"> 
+        <h1 class = "userName">{{username}}</h1>    
+        <p class = "userInfo">
+          Name: {{name}}
+          Age: {{age}}
+          Location: {{location}}
+          Website: {{website}}
+        </p>
+          <div class = carBox>
+          <h3>Car Info:</h3>
+          <ul>
+            <li>Year: {{year}}</li>
+            <li>Make: {{make}}</li>
+            <li>Model: {{model}}</li>
+            <li>Transmission: {{transmission}}</li>
+            <li>Engine: {{engine}}<li>
+          </ul>
+          </div>
+          <a href = "/edit/{{username}}">
+          <button type = "submit" class = "buttonLink">Edit Profile</button>    
+        </div>
+      {{/cars}}
+    </div>
+</body>
+</html>
