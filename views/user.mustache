@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{name}}'s Profile</title>
+  <title>Your Profile</title>
   <link rel="stylesheet" href="/main.css" />
 </head>
 <body>
-    <a href = "/">
-    <button type = "submit" class = "buttonLink">Return to CarDude's Directory</button>
-    </a>
+  <header>
+    {{#cars}}
+    <h1>{{username}}'s Profile</h1> 
+    <nav>
+      <a href = "/cars">Create Your Own Profile</a>
+      <a href = "/index">CarDude Directory</a>
+      <a href="mailto:info@cardudes.com" target="_top">Email Us</a> 
+    </nav>
+  </header>
     <div class = "container">
-      {{#cars}}
       <div class = "userProfile">
       <img class = "profilePic" src = "{{carpic}}"/>  
-        <div class = "userProfileInfo"> 
-        <h1 class = "userName">{{username}}</h1>    
+        <div class = "userProfileInfo">   
         <p class = "userInfo">
-          Name: {{name}}
-          Age: {{age}}
-          Location: {{location}}
-          Website: {{website}}
+          Owner Name: {{name}} |
+          Age: {{age}} |
+          Location: {{location}} |
+          Website: {{website}} |
         </p>
           <div class = carBox>
           <h3>Car Info:</h3>
@@ -30,11 +34,12 @@
             <li>Transmission: {{transmission}}</li>
             <li>Engine: {{engine}}<li>
           </ul>
-          </div>
-          <a href = "/edit/{{username}}">
-          <button type = "submit" class = "buttonLink">Edit Profile</button>    
+          </div>    
         </div>
-      {{/cars}}
-    </div>
+      </div>
+    </br>
+    <a href = "/edit/{{username}}">Edit Your Profile, {{username}}</a>
+    {{/cars}}
+    </div>   
 </body>
 </html>

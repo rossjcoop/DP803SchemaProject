@@ -2,16 +2,24 @@
 <html>
 <head>
 	<title>Welcome to CarDudes!</title>
+	<style>a:link {color: black, text-transform: none;}</style>
 	<link rel = "stylesheet" href = "main.css">
 </head>
 <body>
+	<header>
+		<h1>Welcome to CarDudes!</h1>
+		<nav>
+			<a href = "/cars">Create Your Own Profile</a>
+			<a href = "/index">CarDude Directory</a>
+			<a href="mailto:info@cardudes.com" target="_top">Email Us</a> 
+		</nav>
+	</header>
 	<div class = "container">
-	<h1>Welcome to CarDudes!</h1>
-	<h3>CarDudes User's Current Collection</h3>
-	{{#cars}}
-  	<a href = "/user/{{username}}">
-  	<div class = "usercontainer">
-  		<img src = "{{carpic}}"/>
+		{{#cars}}
+  		<div class = "usercontainer">
+  		<a href = "/user/{{username}}">
+  		<img src = "{{carpic}}" class = "carpic"/>
+  		</a>
   		</br>
   		<span class = "info">Year: {{year}}</span>
   		</br>
@@ -24,8 +32,8 @@
   		<span class = "info">Owner: {{name}}</span>
   		</br>
   		<span class = "info">Location: {{location}}</span>
+  		</div>
+  		{{/cars}}
   	</div>
-  	</a>
-  	{{/cars}}
 </body>
 </html>

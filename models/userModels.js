@@ -54,37 +54,41 @@ function addEntry(newCar, cb){
 
 }
 
-function viewEntries(cb){
-	CarModel.findMany({})
-	.then(function(cars){
-		cb(cars)
-	})
-	.catch(function(error){;
-		console.log("error", error);
-		cb(null)
-		})
-}
+// function viewEntries(cb){
+// 	CarModel.findMany({})
+// 	.then(function(cars){
+// 		cb(cars)
+// 	})
+// 	.catch(function(error){;
+// 		console.log("error", error);
+// 		cb(null)
+// 		})
+// }
 
 
 
-function delEntries(cb){
-	////figure this out last///
-}
+// function delEntries(cb){
+// 	var query = {username: username}
+// 	CarModel.deleteOne(query)
+// 	.then(function(data){
+// 		cb()
+// 	})
+
+// }
 
 
-function viewUsername(cb){
-	var query = {username: username}
-	CarModel.findOne(query)
-	.then(function(data){
-		cb(data)
-	})
+// function viewUsername(cb){
+// 	var query = {username: username}
+// 	CarModel.findOne(query)
+// 	.then(function(data){
+// 		cb(data)
+// 	})
 		
-	}
+// 	}
 
 module.exports = {
 	CarModel: CarModel,
 	addEntry: addEntry,
-	viewUsername: viewUsername
 }
 
 

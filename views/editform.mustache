@@ -1,37 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Join CarDudes!</title>
-	<link rel = "stylesheet" href = "main.css">
+	<title>Update Profile</title>
+	<link rel = "stylesheet" href = "/main.css">
 </head>
 <body>
+	<header>
+		<h1>{{username}}, Update Your Profile</h1>
+		<nav>
+			<a href = "/cars">Create Your Own Profile</a>
+			<a href = "/index">CarDude Directory</a>
+			<a href="mailto:info@cardudes.com" target="_top">Email Us</a> 
+		</nav>
+	</header>
 	<div class = "container">
-	<h1>Edit your info for CarDudes!</h1>
-	<form action = "/submit/{{username}}" method = "post" name = "signupForm" class = "memberEntry">
+	<form action = "/submit/{{username}}" method = "post" name = "signupForm" id = "memberEntry">
+		<h3>Your Info</h3>
 		<label>Name:</label>
+		</br>
 		<input type = "text" name = "name" value = "{{name}}"/>
-		<label>Username: (required)</label>
+		</br>
+		<label>Username:(required)</label>
+		</br>
 		<input type = "text" name = "username" value = "{{username}}"/>
+		</br>
 		<label>Age:</label>
-		<input type = "text" name = "age" value = "{{age}}"/>
+		</br>
+		<input type = "text" name = "age" value = "{{age}}"/>	
+		</br>
 		<label>Location:</label>
+		</br>
 		<input type = "text" name = "location" value = "{{location}}"/>
+		</br>
 		<label>Website:</label>
+		</br>
 		<input type = "text" name = "website" value = "{{website}}"/>
-		<h3>Project Car Info</h3>
+		</br>
+		<h3>Your Car Info</h3>
+		</br>
 		<label>Picture URL:</label>
+		</br>
 		<input type = "text" name = "carpic" value = "{{carpic}}"/>
+		</br>
 		<label>Year:</label>
+		</br>
 		<input type = "text" name = "year" value = "{{year}}"/>
+		</br>
 		<label>Make:</label>
+		</br>
 		<input type = "text" name = "make" value = "{{make}}"/>
+		</br>
 		<label>Model:</label>
+		</br>
 		<input type = "text" name = "model" value = "{{model}}"/>
-		<label>Transmission:</label>
+		</br>
+		<label>Transmission:(better be manual!)</label>
+		</br>
 		<input type = "text" name = "trans" value = "{{trans}}"/>
+		</br>
 		<label>Engine:</label>
+		</br>
 		<input type = "text" name = "engine" value = "{{engine}}"/>
+		</br>
 		<button type = "submit">Submit</button>
+		</br>
+		</br>
+		<a href = "/deleteUser/{{username}}">Delete Profile?!?</a>
+		<a href = "/user/{{username}}">Or Return to Profile</a>
 	</form>
 	</div>
 </body>

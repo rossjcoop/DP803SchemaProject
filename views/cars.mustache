@@ -2,35 +2,66 @@
 <html>
 <head>
 	<title>Join CarDudes!</title>
-	<link rel = "stylesheet" href = "main.css">
+	<link rel = "stylesheet" href = "/main.css">
 </head>
 <body>
+	<header>
+		<h1>Create CarDude Profile</h1>
+		<nav>
+			<a href = "/cars">Create Your Own Profile</a>
+			<a href = "/index">CarDude Directory</a>
+			<a href="mailto:info@cardudes.com" target="_top">Email Us</a> 
+		</nav>
+	</header>
 	<div class = "container">
-	<h1>Add your info to join CarDudes!</h1>
-	<form action = "/cars" method = "post" name = "signupForm" class = "memberEntry">
+	<form action = "/cars" method = "post" name = "signupForm" id = "memberEntry">
+		<h3>Your Info</h3>
 		<label>Name:</label>
+		</br>
 		<input type = "text" name = "name"/>
-		<label>Username: (required</label>
+		</br>
+		<label>Username:(required)</label>
+		</br>
 		<input type = "text" name = "username"/>
+		</br>
 		<label>Age:</label>
-		<input type = "text" name = "age"/>
+		</br>
+		<input type = "text" name = "age"/>	
+		</br>
 		<label>Location:</label>
+		</br>
 		<input type = "text" name = "location"/>
+		</br>
 		<label>Website:</label>
+		</br>
 		<input type = "text" name = "website"/>
-		<h3>Project Car Info</h3>
+		</br>
+		<h3>Your Car Info</h3>
+		</br>
 		<label>Picture URL:</label>
+		</br>
 		<input type = "text" name = "carpic"/>
+		</br>
 		<label>Year:</label>
+		</br>
 		<input type = "text" name = "year"/>
+		</br>
 		<label>Make:</label>
+		</br>
 		<input type = "text" name = "make"/>
+		</br>
 		<label>Model:</label>
+		</br>
 		<input type = "text" name = "model"/>
-		<label>Transmission:</label>
+		</br>
+		<label>Transmission:(better be manual!)</label>
+		</br>
 		<input type = "text" name = "trans"/>
+		</br>
 		<label>Engine:</label>
+		</br>
 		<input type = "text" name = "engine"/>
+		</br>
 		<button type = "submit">Submit</button>
 	</form>
 	</div>

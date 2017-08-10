@@ -4,13 +4,13 @@ const CarModel = require ('../models/userModels')
 
 
 
-
+////Don't know why, needed this to first land on index
 router.get("/", function(req, res, next){
 	res.redirect("index")
 })
 
 
-
+////This renders the first page with all the cars///
 router.get("/index", function(req, res, next){
     CarModel.CarModel.find()
       .then(function(cars) {
@@ -23,13 +23,13 @@ router.get("/index", function(req, res, next){
 
 
 
-
+/////This renders the register page to create account
 router.get("/cars", function(req, res, next){
 	res.render("cars")
 })
 
 
-
+//////This takes the info from the registration form and sends it to the data base, redirects to index
 router.post("/cars", function(req, res, next){
 	var inputData = {
 		name: req.body.name,
@@ -55,14 +55,7 @@ router.post("/cars", function(req, res, next){
 	
 })
 
-
-
-////to edit
-
-
-//1. New Route to render eit form with informaton from the request.
-////2. New mustache template to display edit form populated with specific information
-//3. New Route to take edit form submission and save smurf changes to the database
+///This creates the edit form with user's info already populated
 router.get('/edit/:username', function(req, res, next){
 
 	var username = req.params.username
@@ -81,13 +74,13 @@ router.get('/edit/:username', function(req, res, next){
 
 })
 
-
+//This take the new info from the form and saves it to the database
 router.post('/submit/:username', function( req, res, next){
 	carData = {}
 
 	carData.name = req.body.name
 	carData.username = req.body.username
-	carData.age = req.body.username
+	carData.age = req.body.age
 	carData.location = req.body.location
 	carData.website = req.body.website
 	carData.carpic = req.body.carpic
@@ -96,10 +89,10 @@ router.post('/submit/:username', function( req, res, next){
 	carData.model = req.body.model
 	carData.trans = req.body.trans
 
-	var query = {'username': cardata.username}
+	var query = {'username': carData.username}
 
 
-	CarModel.CarModel.updateOne(query)
+	CarModel.CarModel.findOne(query)
 		.then(function(data){
 			data.name = carData.name
 			data.username = carData.username
@@ -111,16 +104,17 @@ router.post('/submit/:username', function( req, res, next){
 			data.make = carData.make
 			data.model = carData.model
 			data.trans = carData.trans
+
+
+		data.save()
+		.then(function(savedCar){
+		res.redirect("/")	
 		})
-
-	res.redirect("/")
-
-
-
+	})
 })
 
 
-
+////This creates the individual user's page
 router.get("/user/:username", function(req, res, next){
 	var username = req.params.username
 	var query = {"username": username}
@@ -130,6 +124,15 @@ router.get("/user/:username", function(req, res, next){
 	})
 
 	
+})
+/////This deletes the individual user from the database.
+router.get("/deleteUser/:username", function(req, res, next){
+	var username = req.params.username
+	var query = {"username": username}
+	CarModel.CarModel.deleteOne(query)
+	.then(function(){
+		res.redirect("/")
+	})
 })
 
 
